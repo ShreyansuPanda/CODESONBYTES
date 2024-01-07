@@ -1,4 +1,4 @@
-import os
+#CodesonBytes Task 1:Automated Email:- This is a project that automate email sending
 from email.message import EmailMessage
 import ssl
 import smtplib
