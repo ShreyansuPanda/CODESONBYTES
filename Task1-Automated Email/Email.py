@@ -3,9 +3,9 @@ from email.message import EmailMessage
 import ssl
 import smtplib
 
-email_sender="eziomorningstar123@gmail.com"
-email_password = "zjxi uzjg qypd eyyw"
-email_receiver="pshreyanshs@gmail.com"
+email_sender=/* Add the sender's email*/
+email_password = /* Add app password from gmail*/
+email_receiver=/*Add receiver's email*/
 
 subject="CodesonBytes Task 1:Automated Email"
 body="""
