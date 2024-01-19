@@ -1,3 +1,6 @@
+#CodeOnBytes Task 2:Automated Backup Tool:- This is a project that automate backup of files in folder from one location to other
+#Change the location of Source folder and Destination Folder according to your need
+#Change the time as per need, use 24hr format
 import os
 import shutil
 import schedule
@@ -21,7 +24,7 @@ def backup(src, dst):
         print(f"An error occurred during backup: {str(e)}")
 
 def schedule_backup():
-    backup_time = "00:43"  # schedule time in 24h format
+    backup_time = "10:00"  # schedule time in 24h format
     schedule.every().day.at(backup_time).do(backup, source, destination)
     print(f"Backup scheduled for {backup_time} every day")
     while True:
