@@ -1,0 +1,34 @@
+import os
+import shutil
+import schedule
+import time
+
+def backup(src, dst):
+    try:
+        if not os.path.exists(dst):
+            os.makedirs(dst)
+
+        for item in os.listdir(src):
+            s = os.path.join(src, item)
+            d = os.path.join(dst, item)
+            if os.path.isdir(s):
+                shutil.copytree(s, d, symlinks=True)
+            else:
+                shutil.copy2(s, d)
+
+        print(f"Backup completed successfully from {src} to {dst}")
+    except Exception as e:
+        print(f"An error occurred during backup: {str(e)}")
+
+def schedule_backup():
+    backup_time = "00:43"  # schedule time in 24h format
+    schedule.every().day.at(backup_time).do(backup, source, destination)
+    print(f"Backup scheduled for {backup_time} every day")
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+if __name__ == "__main__":
+    source = r"E:\programming\Python\CodesonBytes\File Backup\Source File"
+    destination = r"E:\programming\Python\CodesonBytes\File Backup\Destination File"
+    schedule_backup()
