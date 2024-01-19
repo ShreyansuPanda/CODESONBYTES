@@ -1,4 +1,7 @@
 #CodesonBytes Task 1:Automated Email:- This is a project that automate email sending
+#Use the apppassword from Google Email 
+#For the email of receivers we are importing the data from an excel file,Update the path of excel as required
+
 from email.message import EmailMessage
 import ssl
 import smtplib
@@ -6,14 +9,12 @@ import pandas as pd
 
 email_sender="eziomorningstar123@gmail.com"
 password=r"E:\programming\Python\CodesonBytes\Task 1-Automated Email\PASSWORD.txt"
-
-#For the email of receivers we are importing the data from an Excel file, Update the path of Excel as required
 excel_file_path=r"E:\programming\Python\CodesonBytes\Task 1-Automated Email\Email Receivers.xlsx"
 
 
 subject="CodesonBytes Task 1:Automated Email"
 body="""
-Hello, This is a Test email sent to show that the code for automated email is working!
+Hello,This is a Test email sent to show that the code for automated email is working!
 """
 
 with open(password, 'r') as password:
